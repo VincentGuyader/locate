@@ -2,14 +2,13 @@ Package: locate
 Title: An Amazing Shiny App
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
+    person(given = "vincent",
+           family = "Guyader",
            role = c("aut", "cre"),
-           email = "your@email.com")
+           email = "vincent@thinkr.fr")
 Description: What the package does (one paragraph).
-License: What license is it under?
+License: GPL-3
 Imports: 
-    banR,
     dplyr,
     geosphere,
     glue,
@@ -19,7 +18,6 @@ Imports:
     magrittr,
     shiny,
     shinyalert,
-    shinyBS,
     sp
 Encoding: UTF-8
 LazyData: true

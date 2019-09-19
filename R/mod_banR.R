@@ -1,10 +1,8 @@
-#' @importFrom shinyalert useShinyalert
+#' @importFrom shinyalert useShinyalert shinyalert
 #' @importFrom leaflet leafletOutput
-#' @importFrom shinyBS bsButton
 #' @importFrom magrittr %>% 
 #' @import leaflet
 #' @importFrom  dplyr filter
-#' @import shinyalert
 
 mod_banRUI <- function(id) {
   ns <- NS(id)
@@ -29,7 +27,6 @@ mod_banRUI <- function(id) {
 }
 
 #' @importFrom leaflet leaflet renderLeaflet addTiles setView addMarkers addControl leafletOptions
-#' @importFrom banR geocode reverse_geocode
 #' @importFrom sp SpatialPoints over
 
 mod_banR <- function(input, output, session, r, polyfr) {
