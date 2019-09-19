@@ -3,6 +3,7 @@
 export(run_app)
 import(leaflet)
 import(shiny)
+import(shinyalert)
 importFrom(banR,geocode)
 importFrom(banR,reverse_geocode)
 importFrom(dplyr,filter)
