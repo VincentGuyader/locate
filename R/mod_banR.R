@@ -3,6 +3,7 @@
 #' @importFrom shinyBS bsButton
 #' @importFrom magrittr %>% 
 #' @import leaflet
+#' @importFrom  dplyr filter
 
 mod_banRUI <- function(id) {
   ns <- NS(id)
@@ -33,9 +34,6 @@ mod_banRUI <- function(id) {
 mod_banR <- function(input, output, session, r, polyfr) {
   data(city,package = "locate")
 
-  # > terrain = "http://tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg"
-  # > leaflet(quakes) %>% addTiles(terrain)
-  # Map par défaut
   observe({
     r$geoloc_map <- leaflet(
       options = 
@@ -49,7 +47,8 @@ mod_banR <- function(input, output, session, r, polyfr) {
       
     ) %>%
       # addProviderTiles("cartoDB") %>%
-      addTiles("http://tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg") %>% 
+      # addTiles() %>% 
+      addTiles("http://tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg") %>%
       setView(lng =  1.322813,
               lat = 47.34429,
               zoom = 6)     %>%
@@ -75,10 +74,13 @@ mod_banR <- function(input, output, session, r, polyfr) {
 lon <- as.numeric(input$mymap_reverse_search_feature_found$result$lon)
 lat <- as.numeric(input$mymap_reverse_search_feature_found$result$lat)
 
-message(lon)
-message(lat)
+# message(lon)
+# message(lat)
    
-    
+v<-city %>% filter(name=="Paris")
+dist <- distance(lon1 = lon,lat1 = lat,
+         lon2 = v$long,lat2 = v$lat)
+message(dist)
   })
   
   
