@@ -151,7 +151,7 @@ difficulte <- c("1" =  100/36700,
       top_frac(difficulte[as.character(input$difficulte)],pop) %>% 
       sample_n(1) %>%
       pull(name)
-    coffret$ville <- "Paris"
+    # coffret$ville <- "Paris"
         
   })
   
