@@ -9,13 +9,11 @@ Authors@R:
 Description: What the package does (one paragraph).
 License: GPL-3
 Imports: 
-    config,
     dplyr,
     DT,
     flexdashboard,
     geosphere,
     glue,
-    golem,
     leaflet,
     leaflet.extras,
     magrittr,
