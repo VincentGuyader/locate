@@ -12,12 +12,12 @@ library(shiny)
 if (interactive()) {
   ui <- fluidPage(
     # useShinyalert(),
-    mod_banRUI("locate")
+    mod_locateUI("locate")
   )
   
   server <- function(input, output, session) {
     r <- reactiveValues()
-    callModule(mod_banR, "locate", r)
+    callModule(mod_locate, "locate", r)
   }
   
   shinyApp(ui, server)

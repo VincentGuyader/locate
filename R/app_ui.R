@@ -5,7 +5,7 @@ app_ui <- function() {
     golem_add_external_resources(),
     # List the first level UI elements here 
     fluidPage(
-      mod_banRUI("locate")
+      mod_locateUI("locate")
     )
   )
 }
