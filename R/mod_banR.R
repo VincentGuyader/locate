@@ -41,6 +41,9 @@ mod_locateUI <- function(id) {
 
 mod_locate <- function(input, output, session, r, polyfr) {
   data(city,package = "locate")
+  city2 <- city %>% dplyr::filter(lat> 40,lat <56,long> -10,long<20) %>% 
+   dplyr::filter( !(lat> 40 &lat <56 &long> 8.5&long<10))
+  
 difficulte <- c("1" =  100/36700,
                 "2"=  500/36700,
                 "3" =  5000/36700,
@@ -63,7 +66,6 @@ difficulte <- c("1" =  100/36700,
   )
   # effet de la difficulté
 
-  city %>% summary()
   
   
   
